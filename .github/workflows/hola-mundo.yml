@@ -1,0 +1,22 @@
+name: Ejecutar Script de Python
+
+# Esto hace que el flujo corra cada vez que hagas un cambio en la rama principal
+on:
+  push:
+    branches: [ "principal", "main" ]
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Ejecutar el script
+        run: python hola.py
