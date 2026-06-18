@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # 2. Usamos la variable de entorno global usando la sintaxis $nombre_variable o ${{ env.nombre }}
       - name: Mostrar variable global
