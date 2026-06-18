@@ -1,0 +1,27 @@
+# Nombre del flujo de trabajo para el reto 2
+name: Conociendo los principales Triggers
+
+# Aquí configuramos los 3 disparadores que pide la actividad
+on:
+  # 1. Se activa al subir código (ya lo conoces)
+  push:
+    branches: [ "aprendiendo-github-actions" ]
+
+  # 2. Se activa cuando se crea o actualiza una solicitud de extracción (Pull Request)
+  pull_request:
+    branches: [ "main", "principal" ]
+
+  # 3. Se activa cuando alguien abre o cierra un Issue (Asunto) en el repositorio
+  issues:
+    types: [opened, edited]
+
+# Un trabajo básico para que el archivo sea válido y corra
+jobs:
+  probar-triggers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Mensaje de éxito
+        run: echo "¡El flujo se activó correctamente usando uno de los triggers!"
