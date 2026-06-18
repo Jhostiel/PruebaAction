@@ -19,4 +19,4 @@ jobs:
           python-version: '3.10'
 
       - name: Ejecutar el script
-        run: python hola.py
+        run: python probando.py
