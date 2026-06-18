@@ -1,0 +1,24 @@
+# Nombre del flujo de trabajo para el reto 3
+name: Aprendiendo a usar Expresiones
+
+on: [push]
+
+jobs:
+  probar-expresiones:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # Expresión 1: Acceder al contexto para saber quién activó el flujo
+      - name: Mostrar el usuario que lanzó el flujo
+        run: echo "El flujo fue iniciado por la expresión ${{ github.actor }}"
+
+      # Expresión 2: Acceder al contexto para saber qué evento lo disparó
+      - name: Mostrar el tipo de evento
+        run: echo "Este flujo se ejecutó por un evento de tipo ${{ github.event_name }}"
+
+      # Expresión 3: Uso de una función condicional (siempre dará verdadero en este entorno)
+      - name: Paso condicional con expresiones
+        if: ${{ success() }}
+        run: echo "Este paso se ejecuta solo si los pasos anteriores tuvieron éxito"
