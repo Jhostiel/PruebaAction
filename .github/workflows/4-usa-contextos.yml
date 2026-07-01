@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # 1. Usando el contexto 'github' para ver detalles del repositorio remoto
       - name: Mostrar información del repositorio
