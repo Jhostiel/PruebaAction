@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Mensaje de éxito
         run: echo "¡El flujo se activó correctamente usando uno de los triggers!"
